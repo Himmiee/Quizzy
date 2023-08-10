@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Quizzy.urls'
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 
 TEMPLATES = [
     {
